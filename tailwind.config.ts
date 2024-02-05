@@ -3,12 +3,12 @@ import type { Config } from 'tailwindcss'
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/scopedComponents/vendor/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/scopedComponents/product/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/scopedComponents/vendor/*.{js,ts,jsx,tsx,mdx}',
-    './src/scopedComponents/vendors/*.{js,ts,jsx,tsx,mdx}',
-    './src/scopedComponents/product/*.{js,ts,jsx,tsx,mdx}',
+    './src/Components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/ScopedComponents/vendor/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/ScopedComponents/product/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/ScopedComponents/vendor/*.{js,ts,jsx,tsx,mdx}',
+    './src/ScopedComponents/vendors/*.{js,ts,jsx,tsx,mdx}',
+    './src/ScopedComponents/product/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
