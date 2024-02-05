@@ -40,7 +40,6 @@ const ProductPage = () => {
       const singleProductDataRes: any = await fetchSingleProduct(productId);
       const productData = handleApiRes(singleProductDataRes, toast);
       if (productData) {
-        // console.log(productData);
         setProductData(productData);
       }
     } catch (error) {
