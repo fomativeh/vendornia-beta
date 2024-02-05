@@ -54,7 +54,6 @@ export default function Home() {
   useEffect(() => {
     if (allProducts.length > 0) {
       arrangeProductsInGroups(allProducts, setArrangedProducts);
-      console.log(arrangedProducts);
     }
   }, [allProducts, arrangedProducts]);
   return (
