@@ -1,0 +1,1 @@
+export const SERVER_URL = "https://vendornia-beta-production.up.railway.app"

@@ -1,0 +1,11 @@
+$themeBlue:#00007F;
+
+.dark:hover .icon{
+    fill:$themeBlue
+}
+
+.dark:hover{
+    color:$themeBlue;
+    background: none;
+    border: 1px solid $themeBlue
+}
