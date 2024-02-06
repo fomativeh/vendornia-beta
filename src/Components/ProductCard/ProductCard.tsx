@@ -28,7 +28,7 @@ const ProductCard = ({
       <figure className="min-w-[110px] max-w-[160px] w-[25vw] h-[25vw] min-h-[110px] max-h-[160px] relative rounded-[inherit]">
         <Image
           src={image}
-          alt={"Prouct image"}
+          alt={"Product image"}
           className="rounded-[inherit]"
           fill
         />

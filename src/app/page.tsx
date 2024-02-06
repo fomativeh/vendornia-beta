@@ -55,7 +55,7 @@ export default function Home() {
     if (allProducts.length > 0) {
       arrangeProductsInGroups(allProducts, setArrangedProducts);
     }
-  }, [allProducts, arrangedProducts]);
+  }, [allProducts]);
   return (
     <main className="flex flex-col justify-start items-end min-h-screen bg-[#ffffff] w-full">
       <Toaster

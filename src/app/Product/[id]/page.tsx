@@ -23,10 +23,16 @@ import { ReactionCount } from "@/ScopedComponents/product/ReactionCount";
 import { getBg } from "@/helpers/getBg";
 import ReviewSection from "@/Components/ReviewSection/ReviewSection";
 import ProductDetails from "@/Components/ProductDetails/ProductDetails";
+import MetaTag from "@/Components/Metadata/Metadata";
+import Head from "next/head";
+import { Metadata, ResolvingMetadata } from "next";
+import { setMetaTags } from "@/utils/setMetaTags";
 export type reactionIconsType = {
   type: string;
   icon: string;
 };
+
+
 
 const ProductPage = () => {
   const context = useContext<StoreContextType>(StoreContext);
@@ -34,6 +40,11 @@ const ProductPage = () => {
   const pathname = usePathname();
   const productId = pathname.split("/")[2];
   const [productData, setProductData] = useState<any>(null);
+  const pageTitle = "My product";
+  const pageUrl = "hello";
+  const pageDescription = "Describe your page here";
+  const heroImageUrl = +"/hero-image.jpg";
+  const image = "kk";
 
   const fetchProductData = useCallback(async () => {
     try {
@@ -41,6 +52,7 @@ const ProductPage = () => {
       const productData = handleApiRes(singleProductDataRes, toast);
       if (productData) {
         setProductData(productData);
+        setMetaTags(productData.title, productData.description, pathname, productData.images[0])
       }
     } catch (error) {
       console.log(error);
@@ -49,7 +61,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     fetchProductData();
-  }, [fetchProductData]);
+  }, []);
 
   const reactionIcons: reactionIconsType[] = [
     { type: "love", icon: "/assets/icons/love-active" },
@@ -59,11 +71,10 @@ const ProductPage = () => {
   ];
   const [reaction, setReaction] = useState<string | null>(null);
   const [comment, setComment] = useState<string>("");
-
   const [reviewBG, setReviewBG] = useState<string>("#000");
 
   useEffect(() => {
-    setReviewBG(getBg(reaction as string))
+    setReviewBG(getBg(reaction as string));
   }, [reaction]);
 
   const handleReaction = (type: string) => {
@@ -94,7 +105,7 @@ const ProductPage = () => {
       comment,
       reaction: reaction as string,
     };
-    
+
     try {
       const loadingToast = toast.loading("Sending your review. Please wait...");
       const addReviewRes = await addReview(reviewData);
@@ -127,6 +138,8 @@ const ProductPage = () => {
           },
         }}
       />
+      {/* 
+      <MetaTag {...{ pageDescription, pageTitle, pageUrl, image }} /> */}
       {productData && (
         <section className="page-content flex flex-col justify-start items-center pt-[100px]">
           <section className="w-[95%] flex max-tabletX:flex-col justify-between max-tabletX:justify-start items-start">

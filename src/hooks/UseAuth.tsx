@@ -23,6 +23,6 @@ export const UseAuth = () => {
 
   useEffect(() => {
     fetchUserForAuth(accessToken, setUserData);
-  }, [fetchUserForAuth]);
+  }, []);
   return <></>;
 };

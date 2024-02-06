@@ -30,9 +30,8 @@ export const updateProduct = async (productDetails: any, productId:string) => {
 
 export const fetchSingleProduct = async (productId: string) => {
     try {
-        const response = await axios.post(
-            `${SERVER_URL}/product/single`,
-            { productId },
+        const response = await axios.get(
+            `${SERVER_URL}/product/single/${productId}`,
             {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
