@@ -59,7 +59,7 @@ const ProductPage = () => {
   }, [productId]);
 
   useEffect(() => {
-    setMetaTags("My vendornia site", "Just a test description", document.location.href, "https://res.cloudinary.com/vendornia/image/upload/v1702456523/o4qn2yzzmwfqg3yxh2kx.jpg")
+    // setMetaTags("My vendornia site", "Just a test description", document.location.href, "https://res.cloudinary.com/vendornia/image/upload/v1702456523/o4qn2yzzmwfqg3yxh2kx.jpg")
     fetchProductData();
   }, []);
 
