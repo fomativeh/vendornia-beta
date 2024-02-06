@@ -52,7 +52,6 @@ const ProductPage = () => {
       const productData = handleApiRes(singleProductDataRes, toast);
       if (productData) {
         setProductData(productData);
-        setMetaTags(productData.title, productData.description, document.location.href, productData.images[0])
       }
     } catch (error) {
       console.log(error);
@@ -60,6 +59,7 @@ const ProductPage = () => {
   }, [productId]);
 
   useEffect(() => {
+    setMetaTags("My vendornia site", "Just a test description", document.location.href, "https://res.cloudinary.com/vendornia/image/upload/v1702456523/o4qn2yzzmwfqg3yxh2kx.jpg")
     fetchProductData();
   }, []);
 
@@ -138,8 +138,7 @@ const ProductPage = () => {
           },
         }}
       />
-      {/* 
-      <MetaTag {...{ pageDescription, pageTitle, pageUrl, image }} /> */}
+
       {productData && (
         <section className="page-content flex flex-col justify-start items-center pt-[100px]">
           <section className="w-[95%] flex max-tabletX:flex-col justify-between max-tabletX:justify-start items-start">
