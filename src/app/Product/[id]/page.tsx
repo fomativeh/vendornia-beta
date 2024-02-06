@@ -52,7 +52,7 @@ const ProductPage = () => {
       const productData = handleApiRes(singleProductDataRes, toast);
       if (productData) {
         setProductData(productData);
-        setMetaTags(productData.title, productData.description, pathname, productData.images[0])
+        setMetaTags(productData.title, productData.description, document.location.href, productData.images[0])
       }
     } catch (error) {
       console.log(error);
