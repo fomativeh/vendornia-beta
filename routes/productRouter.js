@@ -25,7 +25,7 @@ productRouter.post(
   productController.create
 );
 
-productRouter.post("/single", productController.fetchSingle);
+productRouter.get("/single/:productId", productController.fetchSingle);
 productRouter.post("/delete", productController.deleteSingle);
 productRouter.put("/:productId", productController.update);
 productRouter.get("/all", productController.fetchAll);
