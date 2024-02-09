@@ -22,6 +22,8 @@ export type arrangedProductsType = {
   products: any[];
 };
 
+export const dynamic = 'force-dynamic'
+
 export default function Home() {
   const context = useContext<StoreContextType>(StoreContext);
   const { state } = context;
