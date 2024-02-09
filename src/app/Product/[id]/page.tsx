@@ -28,18 +28,16 @@ import Head from "next/head";
 import { Metadata, ResolvingMetadata } from "next";
 import { setMetaTags } from "@/utils/setMetaTags";
 import ProductComponent from "./productComponent";
+import { getProductIdFromRoute } from "@/helpers/getProductIdFromRoute";
 export type reactionIconsType = {
   type: string;
   icon: string;
 };
 
-export async function generateMetadata() {
-  const singleProductDataRes: any = await fetchSingleProduct(
-    "65796cceefe0bbeed0ad0ded"
-  );
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const singleProductDataRes: any = await fetchSingleProduct(params.id);
 
   let productData = singleProductDataRes.data.data;
-  console.log(productData.title);
   return {
     title: productData.title,
     description: productData.description,
