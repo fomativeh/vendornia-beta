@@ -49,11 +49,25 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
       images: [
         {
           url: productData.images[0],
-          width: 800,
-          height: 600,
+          width: 1200, // Adjusted width for 1.91:1 aspect ratio
+          height: 630, 
         },
       ],
     },
+
+    pin: {
+      media: productData.images[0],
+      description: productData.title,
+    },
+
+    // Additional metadata for Telegram
+    telegram: {
+      title: productData.title,
+      description: productData.description,
+      image: productData.images[0],
+    },
+
+
   };
 }
 
