@@ -44,6 +44,8 @@ export async function generateMetadata() {
     title: productData.title,
     description: productData.description,
     openGraph: {
+      title: productData.title,
+      description: productData.description,
       url: "https://vendornia-beta.vercel.app",
       siteName: "Vendornia",
       images: [
